@@ -1,0 +1,12 @@
+<h1>Pregunta:</h1>
+<h2>¿De qué color es el caballo blanco de San Martin?</h2>
+
+<form method="post" action="/">
+  Respuesta: <input type="text" name="respuesta" />
+  <input type="submit" value="Responder" />
+</form>
+
+Resultado:
+<% if defined?(@resultado) %>
+  <p><%= @resultado %></p>
+<% end %>
