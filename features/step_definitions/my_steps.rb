@@ -1,4 +1,8 @@
 When(/^I select the right option$/) do
-  click_link("0")
+  choose("respuesta_0")
+end
+
+When(/^I select an incorrect option$/) do
+  choose("respuesta_1")
 end
 

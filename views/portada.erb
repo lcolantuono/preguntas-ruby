@@ -9,7 +9,7 @@
 <form method="post" action="/">
   Respuestas:
 		<% @@respuestas.each_with_index do |resp, i| %>
-			<input name="respuesta" value="<%= i %>" type="radio"> <%= resp %>
+			<input id="respuesta_<%= i %>" name="respuesta" value="<%= i %>" type="radio"> <%= resp %>
 		<% end %> 
 	
   <input type="submit" value="Responder" />
