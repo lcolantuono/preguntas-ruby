@@ -1,8 +1,17 @@
 <h1>Pregunta:</h1>
-<h2><%= @@Preg_resp.get_pregunta %><h2>
+<h2><%= @@Preg_resp_multiple.get_pregunta %><h2>
 
-<form method="post" action="/">
+<!--<form method="post" action="/">
   Respuesta: <input type="text" name="respuesta" />
+  <input type="submit" value="Responder" />
+</form>
+-->
+<form method="post" action="/">
+  Respuestas:
+		<% @@respuestas.each_with_index do |resp, i| %>
+			<input name="respuesta" value="<%= i %>" type="radio"> <%= resp %>
+		<% end %> 
+	
   <input type="submit" value="Responder" />
 </form>
 
