@@ -33,13 +33,13 @@ describe "Pregunta Respuesta" do
   it "Validar pregunta con opción multiple con respuesta correcta devuelve Correcto" do
     preg_multiple = PregMultiple.new
     preg_multiple.set_preg_multiple("¿De qué color es el caballo blanco de San Martín?", ["Blanco", "Negro", "Azul"], 0)
-    expect( preg_multiple.validar "Blanco" ).to eq "Correcto"
+    expect( preg_multiple.validar 0 ).to eq "Correcto"
   end
 
   it "Validar pregunta con opción multiple con respuesta incorrecta devuelve Incorrecto" do
     preg_multiple = PregMultiple.new
-    preg_multiple.set_preg_multiple("¿De qué color es el caballo blanco de San Martín?", ["Blanco", "Negro", "Azul"], 2)
-    expect( preg_multiple.validar "Blanco" ).to eq "Incorrecto"
+    preg_multiple.set_preg_multiple("¿De qué color es el caballo blanco de San Martín?", ["Blanco", "Negro", "Azul"], 0)
+    expect( preg_multiple.validar 2 ).to eq "Incorrecto"
   end
 
   it "Obtener pregunta de Pregunta Multiple" do

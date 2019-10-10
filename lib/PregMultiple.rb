@@ -6,7 +6,7 @@ class PregMultiple
 	end
 
 	def validar posible_respuesta
-		get_respuesta_correcta == posible_respuesta ? "Correcto" : "Incorrecto"
+		@posicion_correcta == posible_respuesta ? "Correcto" : "Incorrecto"
 	end
 
 	def get_pregunta
