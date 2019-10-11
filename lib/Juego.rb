@@ -9,6 +9,10 @@ class Juego
 		@preg_resp_mult
 	end
 
+	def get_siguiente_pregunta
+		@preg_resp_mult[@indice].get_pregunta
+	end
+
   def get_vidas
     @vidas
 	end
