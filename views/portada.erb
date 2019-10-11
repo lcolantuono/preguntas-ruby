@@ -10,9 +10,14 @@
 	  <input type="submit" value="Responder" />
 	</form>
 	-->
-	<div class="col-md-12" style="text-align: right;">
+<div class="row">
+	<div class="col-md-6" style="text-align: left;">
+		Score: <%= @@juego.get_score %>
+	</div>
+	<div class="col-md-6" style="text-align: right;">
 		Vidas: <img src="vidas<%= @@juego.get_vidas %>.png" title="vidas" alt="vidas" />
 	</div>
+</div>
 	<form method="post" action="/">
 		<% @@juego.get_siguiente_pregunta.get_respuestas.each_with_index do |resp, i| %>
 		
@@ -21,7 +26,9 @@
 		</div>
 		<% end %>
 <div class="col-md-12" style="display: flex; justify-content: center; margin-top: 20px">
-	  <input type="submit" value="Responder" />
+		<% if !defined?(@resultado) || (defined?(@resultado) && @resultado != "Correcto") %>
+	  	<input type="submit" value="Responder" />
+		<% end %>
 </div>
 	</form>
 	<% if defined?(@resultado) %>
