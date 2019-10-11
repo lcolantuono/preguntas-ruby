@@ -72,6 +72,6 @@ describe "Juego Preguntas" do
     preg_multiple2.set_preg_multiple(pregunta, respuestas, 0)
     juego = Juego.new [preg_multiple, preg_multiple2]
 		juego.responde_bien
-		expect( juego.get_siguiente_pregunta ).to eq preg_multiple2.get_pregunta
+		expect( juego.get_siguiente_pregunta ).to eq preg_multiple2
 	end
 end

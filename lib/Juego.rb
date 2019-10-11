@@ -10,7 +10,7 @@ class Juego
 	end
 
 	def get_siguiente_pregunta
-		@preg_resp_mult[@indice].get_pregunta
+		@preg_resp_mult[@indice]
 	end
 
   def get_vidas
