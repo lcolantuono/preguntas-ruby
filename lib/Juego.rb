@@ -1,6 +1,14 @@
+require "./utils.rb"
+
 class Juego
-	def initialize preg_resp_mult
-		@preg_resp_mult = preg_resp_mult
+	def initialize
+		@preg_resp_mult = get_preg_resps
+		@vidas = 3
+		@indice = 0
+	end
+
+	def reset
+		@preg_resp_mult = get_preg_resps
 		@vidas = 3
 		@indice = 0
 	end
@@ -15,6 +23,14 @@ class Juego
 
   def get_vidas
     @vidas
+	end
+
+	def validar posible_respuesta
+		resultado = get_siguiente_pregunta.validar posible_respuesta
+		if resultado == 'Incorrecto'
+			responde_mal
+		end
+		return resultado
 	end
 
 	def responde_mal
