@@ -26,7 +26,7 @@
 	</form>
 	<% if defined?(@resultado) %>
 	  <% if @resultado == "Correcto" %>
-	    <form method="post" action="/siguiente">
+	    <form class="col-md-12" style="display: flex; justify-content: center; margin-top: 20px" method="post" action="/siguiente">
 		  <input type="submit" value="Siguiente" />
 		</form>
 	  <% end %>
