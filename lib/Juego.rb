@@ -19,7 +19,6 @@ class Juego
 
 	def responde_mal
 		@vidas -= 1
-		@indice += 1
 		@vidas
   end
 
