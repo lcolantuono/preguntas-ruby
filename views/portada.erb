@@ -11,7 +11,7 @@
 	</form>
 	-->
 	<div class="col-md-12" style="text-align: right;">
-		Vidas: <%= @@juego.get_vidas %>
+		Vidas: <img src="vidas<%= @@juego.get_vidas %>.png" title="vidas" alt="vidas" />
 	</div>
 	<form method="post" action="/">
 		<% @@juego.get_siguiente_pregunta.get_respuestas.each_with_index do |resp, i| %>

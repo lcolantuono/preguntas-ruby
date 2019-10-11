@@ -5,14 +5,14 @@ Scenario: Selección correcta no resta vidas
 	When I select the right option
 		And I press "Responder"
 	Then I should see "CORRECTO!"
-		And I should see "Vidas: 3"
+		And I should see the image "vidas3.png"
 
 Scenario: Selección incorrecta resta vidas
 	Given I open the web app
 	When I select an incorrect option
 		And I press "Responder"
 	Then I should see "INCORRECTO!"
-		And I should see "Vidas: 2"
+		And I should see the image "vidas2.png"
 
 Scenario: Respuesta correcta habilita siguiente
 	Given I open the web app
