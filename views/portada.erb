@@ -11,10 +11,13 @@
 	</form>
 	-->
 <div class="row">
-	<div class="col-md-6" style="text-align: left;">
+	<div class="col-md-4" style="text-align: left;">
 		Score: <%= @@juego.get_score %>
 	</div>
-	<div class="col-md-6" style="text-align: right;">
+<div class="col-md-4" styles="display: flex; justify-content: center">
+<form style="margin-left: 30%" method="post" action="/ayuda"><input <%= @@juego.pidio_ayuda ? 'disabled' : "" %> style="margin-top: 10px" type="submit" value="Ayuda" /></form>
+</div>	
+<div class="col-md-4" style="text-align: right;">
 		Vidas: <img src="vidas<%= @@juego.get_vidas %>.png" title="vidas" alt="vidas" />
 	</div>
 </div>
@@ -22,7 +25,7 @@
 		<% @@juego.get_siguiente_pregunta.get_respuestas.each_with_index do |resp, i| %>
 		
 		<div class="col-md-12" style="margin-left: 46%">
-			<input id="respuesta_<%= i %>" name="respuesta" value="<%= i %>" type="radio"> <%= resp %>
+			<input <%= resp == 'ELIMINADA' ? 'disabled' : "" %> id="respuesta_<%= i %>" name="respuesta" value="<%= i %>" type="radio"> <%= resp %>
 		</div>
 		<% end %>
 <div class="col-md-12" style="display: flex; justify-content: center;">

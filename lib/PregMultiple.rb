@@ -3,6 +3,7 @@ class PregMultiple
 		@pregunta = pregunta
 		@respuestas = respuestas
 		@posicion_correcta = posicion_correcta
+		@ayuda = false
 	end
 
 	def validar posible_respuesta
@@ -13,8 +14,24 @@ class PregMultiple
 		@pregunta
 	end
 
+	def ayuda
+		@ayuda = true
+	end
+
+	def pidio_ayuda
+		@ayuda
+	end
+
 	def get_respuestas
-		@respuestas
+		if !@ayuda
+			@respuestas
+		else
+			if @posicion_correcta < @respuestas.size - 1
+				array_ayuda =  @respuestas[0,@posicion_correcta+1].concat(["ELIMINADA"]).concat(@respuestas[@posicion_correcta+2,@respuestas.size - 1])
+			else
+				array_ayuda = ["ELIMINADA"].concat @respuestas[1, @respuestas.size - 1]
+			end
+		end
 	end
 	
 	#def get_respuesta_correcta

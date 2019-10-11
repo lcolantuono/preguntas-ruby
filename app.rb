@@ -24,3 +24,8 @@ post '/siguiente' do
 	@@juego.responde_bien
 	erb:portada
 end
+
+post '/ayuda' do
+	@@juego.pedir_ayuda
+	erb:portada
+end

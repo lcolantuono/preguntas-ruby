@@ -41,3 +41,8 @@ Scenario: Poder volver a jugar luego de perder
 		And I press "Responder"
 	Then I should see "Volver a jugar"
 
+Scenario: Poder pedir ayuda en una pregunta
+	Given I open the web app
+	When I press "Ayuda"
+	Then I should see "ELIMINADA"
+

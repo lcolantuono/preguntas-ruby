@@ -27,6 +27,14 @@ class Juego
     @vidas
 	end
 
+	def pidio_ayuda
+		get_siguiente_pregunta.pidio_ayuda
+	end
+
+	def pedir_ayuda
+		get_siguiente_pregunta.ayuda
+	end
+	
 	def validar posible_respuesta
 		resultado = get_siguiente_pregunta.validar posible_respuesta
 		if resultado == 'Incorrecto'
