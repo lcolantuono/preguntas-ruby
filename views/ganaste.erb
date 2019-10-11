@@ -1,0 +1,28 @@
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<h2 class="col-md-12" style="display: flex; justify-content: center; margin-bottom: 40px">Preguntontis</h2>
+	<div class="alert alert-success" role="alert" >
+		<h1 class="col-md-12" style="display: flex; justify-content: center; margin-bottom: 40px; font-weight: 600">GANASTE!<h1>
+	</div>
+<div class="row">
+	<div class="col-md-6" style="text-align: left;">
+		<h2>Score: <%= @@juego.get_score %></h2>
+	</div>
+	<div class="col-md-6" style="text-align: right;">
+		<h2>Vidas: </h2><img src="vidas<%= @@juego.get_vidas %>.png" title="vidas" alt="vidas" />
+	</div>
+</div>
+
+<div class="row" style="display: flex; justify-content: center" >
+	<div class="col-md-12" style="display: flex; justify-content: center" >
+		<img title="minion" alt="miniongif" src="http://giphygifs.s3.amazonaws.com/media/MOWPkhRAUbR7i/giphy.gif" />
+	</div>
+	<div class="alert alert-primary" role="alert" style="margin-top: 50px;">
+		<h3><a href="/">Volver a jugar</a></h3>
+	</div>
+</div>
+</body>
+
+
