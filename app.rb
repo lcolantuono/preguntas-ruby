@@ -22,7 +22,11 @@ end
 
 post '/siguiente' do
 	@@juego.responde_bien
-	erb:portada
+  if @@juego.get_preguntas.length <= @@juego.get_indice
+		erb:ganaste
+  else 
+		erb:portada
+	end
 end
 
 post '/ayuda' do

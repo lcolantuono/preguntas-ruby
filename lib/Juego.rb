@@ -57,4 +57,8 @@ class Juego
 	def get_score
 		@score
 	end
+
+  def get_indice
+		@indice
+	end
 end

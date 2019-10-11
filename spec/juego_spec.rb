@@ -47,40 +47,47 @@ it "Crear juego inicializa con 3 vidas" do
     expect( juego.get_vidas ).to eq 3
 	end
 
-it "Empieza juego con score en 0" do
-    juego = Juego.new
-    expect( juego.get_score ).to eq 0
-end
-
-it "Respuesta correcta suma un punto al score" do
-    juego = Juego.new
-	juego.responde_bien
-    expect( juego.get_score ).to eq 1
+	it "Empieza juego con score en 0" do
+		  juego = Juego.new
+		  expect( juego.get_score ).to eq 0
 	end
 
-it "Resetear juego vuelve a 0" do
-    juego = Juego.new
-	juego.responde_bien
-	juego.reset
-    expect( juego.get_score ).to eq 0
+	it "Respuesta correcta suma un punto al score" do
+	  juego = Juego.new
+		juego.responde_bien
+	  expect( juego.get_score ).to eq 1
 	end
 
-it "Responder correcto devuelve 'Correcto'" do
-    	juego = Juego.new
-	resp = juego.validar 2
-	expect( resp ).to eq "Correcto"
-end
+	#it "Responder todas las respuestas, ganas el juego" do
+	#  juego = Juego.new
+	#	juego.responde_bien
+	#	juego.responde_bien
+	#  expect( juego.get_preguntas.length ).to eq juego.get_indice
+	#end
+
+	it "Resetear juego vuelve a 0" do
+	  juego = Juego.new
+		juego.responde_bien
+		juego.reset
+	  expect( juego.get_score ).to eq 0
+	end
+
+	it "Responder correcto devuelve 'Correcto'" do
+		juego = Juego.new
+		resp = juego.validar 2
+		expect( resp ).to eq "Correcto"
+	end
 
 
-it "Responder incorrecto resta 1 vida" do
-    	juego = Juego.new
-	resp = juego.validar 1
-	expect( juego.get_vidas ).to eq 2
-end
+	it "Responder incorrecto resta 1 vida" do
+		  	juego = Juego.new
+		resp = juego.validar 1
+		expect( juego.get_vidas ).to eq 2
+	end
 
-it "Juego get preguntas" do
-	primer_pregunta = "En una pecera había 10 peces, 2 se ahogaron y 3 se fueron nadando, ¿Cuántos peces quedaron?"
-    	juego = Juego.new
-	expect( juego.get_preguntas[0].get_pregunta ).to eq primer_pregunta
-end
+	it "Juego get preguntas" do
+		primer_pregunta = "En una pecera había 10 peces, 2 se ahogaron y 3 se fueron nadando, ¿Cuántos peces quedaron?"
+		  	juego = Juego.new
+		expect( juego.get_preguntas[0].get_pregunta ).to eq primer_pregunta
+	end
 end

@@ -21,21 +21,24 @@
 		Vidas: <img src="vidas<%= @@juego.get_vidas %>.png" title="vidas" alt="vidas" />
 	</div>
 </div>
+<% if !defined?(@resultado) || (defined?(@resultado) && @resultado != "Correcto") %>
 	<form style="margin-bottom: 0px" method="post" action="/">
 		<% @@juego.get_siguiente_pregunta.get_respuestas.each_with_index do |resp, i| %>
 		
 		<div class="col-md-12" style="margin-left: 46%">
-			<input <%= resp == 'ELIMINADA' ? 'disabled' : "" %> id="respuesta_<%= i %>" name="respuesta" value="<%= i %>" type="radio"> <%= resp %>
+			<input required <%= resp == 'ELIMINADA' ? 'disabled' : "" %> id="respuesta_<%= i %>" name="respuesta" value="<%= i %>" type="radio"> <%= resp %>
 		</div>
 		<% end %>
 <div class="col-md-12" style="display: flex; justify-content: center;">
-		<% if !defined?(@resultado) || (defined?(@resultado) && @resultado != "Correcto") %>
+		
 	  	<input style="margin-top: 10px" type="submit" value="Responder" />
-		<% end %>
+		
 </div>
 	</form>
+<% end %>
 	<% if defined?(@resultado) %>
 	  <% if @resultado == "Correcto" %>
+		<p style="display: flex; justify-content: center; font-size: 60px; font-weight: 600; color: green;"><%= @@juego.get_siguiente_pregunta.get_respuesta_correcta %></p>
 	    <form class="col-md-12" style="display: flex; justify-content: center; margin-bottom: 0px" method="post" action="/siguiente">
 		  <input style="margin-top: 10px" type="submit" value="Siguiente" />
 		</form>

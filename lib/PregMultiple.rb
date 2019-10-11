@@ -34,7 +34,7 @@ class PregMultiple
 		end
 	end
 	
-	#def get_respuesta_correcta
-	#	@respuestas[@posicion_correcta]
-	#end
+	def get_respuesta_correcta
+		@respuestas[@posicion_correcta]
+	end
 end
