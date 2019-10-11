@@ -13,7 +13,11 @@ end
 post '/' do
   respuesta = params["respuesta"].to_i
   @resultado = @@juego.validar respuesta
-  erb:portada
+	if @@juego.get_vidas < 1
+		erb:game_over
+	else
+		erb:portada
+	end
 end
 
 post '/siguiente' do

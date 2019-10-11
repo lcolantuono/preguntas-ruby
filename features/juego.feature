@@ -14,3 +14,23 @@ Scenario: Selección incorrecta resta vidas
 	Then I should see "INCORRECTO!"
 		And I should see "Vidas: 2"
 
+Scenario: Selección incorrecta 3 veces, Game Over
+	Given I open the web app
+	When I select an incorrect option
+		And I press "Responder"
+		And I select an incorrect option
+		And I press "Responder"
+		And I select an incorrect option
+		And I press "Responder"
+	Then I should see "GAME OVER!"
+
+Scenario: Poder volver a jugar luego de perder
+	Given I open the web app
+	When I select an incorrect option
+		And I press "Responder"
+		And I select an incorrect option
+		And I press "Responder"
+		And I select an incorrect option
+		And I press "Responder"
+	Then I should see "Volver a jugar"
+
