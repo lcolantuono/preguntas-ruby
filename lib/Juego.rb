@@ -4,12 +4,14 @@ class Juego
 	def initialize
 		@preg_resp_mult = get_preg_resps
 		@vidas = 3
+		@score = 0
 		@indice = 0
 	end
 
 	def reset
 		@preg_resp_mult = get_preg_resps
 		@vidas = 3
+		@score = 0
 		@indice = 0
 	end
 
@@ -39,7 +41,12 @@ class Juego
   end
 
 	def responde_bien
-    @indice += 1
+    @indice += 1	
+		@score +=1
     @vidas
   end
+
+	def get_score
+		@score
+	end
 end

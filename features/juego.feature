@@ -14,3 +14,9 @@ Scenario: Selección incorrecta resta vidas
 	Then I should see "INCORRECTO!"
 		And I should see "Vidas: 2"
 
+Scenario: Respuesta correcta habilita siguiente
+	Given I open the web app
+	When I select the right option
+		And I press "Responder"
+		And I press "Siguiente"
+	Then I should see "¿De qué color es el caballo blanco de San Martin?"
